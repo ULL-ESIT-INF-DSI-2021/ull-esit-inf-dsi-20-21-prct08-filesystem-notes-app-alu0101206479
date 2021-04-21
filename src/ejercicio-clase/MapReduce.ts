@@ -29,7 +29,7 @@ export abstract class MapReduce {
    */
   public run() {
     this.hookMap();
-    this.setArray(this.map(function(x) {
+    this.setArray(this.map((x) => {
       return x * 2;
     }));
 
