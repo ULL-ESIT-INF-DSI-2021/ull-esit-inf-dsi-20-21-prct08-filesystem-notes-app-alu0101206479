@@ -23,6 +23,10 @@ export abstract class MapReduce {
     this.miArray = miArray;
   }
 
+  /**
+   * Función run que servirá para hacer el map y el reduce
+   * @returns El resultado del reduce
+   */
   public run() {
     this.hookMap();
     this.setArray(this.map(function(x) {
@@ -33,6 +37,11 @@ export abstract class MapReduce {
     return this.reduce();
   }
 
+  /**
+   * FUnción map
+   * @param funcion función a ejecutar
+   * @returns El nuevo array resultado de la funcion
+   */
   protected map(funcion: (arg0: number) => number) {
     const arrayNuevo: number[] = [];
     this.miArray.forEach((element) => {
@@ -41,11 +50,21 @@ export abstract class MapReduce {
     return arrayNuevo;
   }
 
+  /**
+   * Función reduce
+   */
   public abstract reduce(): number;
 
+  /**
+   * Función hook para antes del map
+   */
   protected hookMap() {
     console.log("Hacemos el map");
   }
+
+  /**
+   * Función hook para antes del reduce
+   */
   public abstract hookReduce(): void;
 }
 
