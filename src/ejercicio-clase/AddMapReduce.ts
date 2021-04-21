@@ -21,4 +21,8 @@ export class AddMapReduce extends MapReduce {
     });
     return suma;
   }
+
+  public hookReduce() {
+    console.log("Hacemos el reduce por la suma");
+  }
 }

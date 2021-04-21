@@ -21,4 +21,8 @@ export class DivMapReduce extends MapReduce {
     });
     return division;
   }
+
+  public hookReduce() {
+    console.log("Hacemos el reduce por la división");
+  }
 }

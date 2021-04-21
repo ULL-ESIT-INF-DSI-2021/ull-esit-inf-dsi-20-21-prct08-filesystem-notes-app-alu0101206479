@@ -21,4 +21,8 @@ export class ProdMapReduce extends MapReduce {
     });
     return multiplicación;
   }
+
+  public hookReduce() {
+    console.log("Hacemos el reduce por la multiplicación");
+  }
 }

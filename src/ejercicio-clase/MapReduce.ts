@@ -24,10 +24,12 @@ export abstract class MapReduce {
   }
 
   public run() {
+    this.hookMap();
     this.setArray(this.map(function(x) {
       return x * 2;
     }));
 
+    this.hookReduce();
     return this.reduce();
   }
 
@@ -44,5 +46,6 @@ export abstract class MapReduce {
   protected hookMap() {
     console.log("Hacemos el map");
   }
+  public abstract hookReduce(): void;
 }
 

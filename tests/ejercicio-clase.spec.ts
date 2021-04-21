@@ -1,6 +1,5 @@
 import 'mocha';
 import {expect} from 'chai';
-import {MapReduce} from '../src/ejercicio-clase/MapReduce';
 import {AddMapReduce} from '../src/ejercicio-clase/AddMapReduce';
 import {SubMapReduce} from '../src/ejercicio-clase/SubMapReduce';
 import {ProdMapReduce} from '../src/ejercicio-clase/ProdMapReduce';
@@ -19,17 +18,17 @@ describe('Pruebas del ejercicio de clase', ()=> {
   });
   describe('Pruebas clase AddMapReduce', ()=> {
     it('expect().to.deep.equal();', ()=>{
-      expect(miMapReduceDos.run()).to.be.equal(38);
+      expect(miMapReduceDos.run()).to.be.equal(-38);
     });
   });
   describe('Pruebas clase AddMapReduce', ()=> {
     it('expect().to.deep.equal();', ()=>{
-      expect(miMapReduceTres.run()).to.be.equal(38);
+      expect(miMapReduceTres.run()).to.be.equal(0);
     });
   });
   describe('Pruebas clase AddMapReduce', ()=> {
     it('expect().to.deep.equal();', ()=>{
-      expect(miMapReduceCuatro.run()).to.be.equal(38);
+      expect(miMapReduceCuatro.run()).to.be.equal(0);
     });
   });
 });

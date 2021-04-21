@@ -21,4 +21,8 @@ export class SubMapReduce extends MapReduce {
     });
     return resta;
   }
+
+  public hookReduce() {
+    console.log("Hacemos el reduce por la resta");
+  }
 }
