@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
-    "start": "tsc-watch --onSuccess \"node dist/ejercicio-1/combat.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/ejercicio-clase/clase.js\"",
     "doc": "typedoc"
   },
   "repository": {

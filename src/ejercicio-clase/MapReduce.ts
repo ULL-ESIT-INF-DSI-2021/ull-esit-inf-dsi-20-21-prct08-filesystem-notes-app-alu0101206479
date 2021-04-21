@@ -41,6 +41,8 @@ export abstract class MapReduce {
 
   public abstract reduce(): number;
 
-
+  protected hookMap() {
+    console.log("Hacemos el map");
+  }
 }
 
