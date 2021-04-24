@@ -7,7 +7,7 @@
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
     "startEjClase": "tsc-watch --onSuccess \"node dist/ejercicio-clase/clase.js\"",
-    "startApp": "tsc-watch --onSuccess \"node dist/aplicacion/aplicacion.js\"",
+    "startApp": "tsc-watch --onSuccess \"node dist/aplicacion/note-app.js\"",
     "doc": "typedoc"
   },
   "repository": {
