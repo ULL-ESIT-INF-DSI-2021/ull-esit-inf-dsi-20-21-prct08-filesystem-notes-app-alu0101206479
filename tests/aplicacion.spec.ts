@@ -2,6 +2,13 @@ import 'mocha';
 import {expect} from 'chai';
 import {Nota} from '../src/aplicacion/nota';
 import {Usuario} from '../src/aplicacion/usuario';
+import * as fs from 'fs';
+
+if (fs.existsSync(`src/aplicacion/usuarios/usuario_prueba`)) {
+  fs.readdirSync(`src/aplicacion/usuarios/usuario_prueba`).forEach((fichero) => {
+    fs.rmSync(`src/aplicacion/usuarios/usuario_prueba/${fichero}`);
+  });
+}
 
 const notaUno = new Nota("Red note", "This is a red note", "red");
 const notaDos = new Nota("Blue note", "This is a blue note", "blue");
@@ -45,18 +52,14 @@ describe('Pruebas de la aplicación y sus clases', ()=> {
     });
     it('usuario.añadirNota(notaDos.getTitulo(), notaDos.getCuerpo(), notaDos.getColor());', ()=>{
       usuario.añadirNota(notaDos.getTitulo(), notaDos.getCuerpo(), notaDos.getColor());
-      expect(usuario.getNotas()).to.deep.equal([notaUno, notaDos]);
+      expect(fs.existsSync(`src/aplicacion/usuarios/${usuario.getNombre()}/${notaDos.getTitulo()}.json`)).to.be.equal(true);
     });
     it('expect(usuario.getNotas()).to.deep.equal([notaUno, notaDos]);', ()=>{
       expect(usuario.getNotas()).to.deep.equal([notaUno, notaDos]);
     });
     it('usuario.modificarNota("Red note", "titulo", "Green note");', ()=>{
       usuario.modificarNota("Red note", "titulo", "Green note");
-      expect(usuario.getNotas()[0].getTitulo()).to.deep.equal("Green note");
-    });
-    it('usuario.borrarNota("Green note");', ()=>{
-      usuario.borrarNota("Green note");
-      expect(usuario.getNotas()).to.deep.equal([notaDos]);
+      expect(fs.existsSync(`src/aplicacion/usuarios/${usuario.getNombre()}/Green note.json`)).to.be.equal(true);
     });
     it('usuario.listarNotas();', ()=>{
       console.log();
