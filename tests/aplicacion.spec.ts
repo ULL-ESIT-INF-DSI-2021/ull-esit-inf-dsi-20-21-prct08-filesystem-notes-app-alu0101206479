@@ -52,14 +52,14 @@ describe('Pruebas de la aplicación y sus clases', ()=> {
     });
     it('usuario.añadirNota(notaDos.getTitulo(), notaDos.getCuerpo(), notaDos.getColor());', ()=>{
       usuario.añadirNota(notaDos.getTitulo(), notaDos.getCuerpo(), notaDos.getColor());
-      expect(fs.existsSync(`src/aplicacion/usuarios/${usuario.getNombre()}/${notaDos.getTitulo()}.json`)).to.be.equal(true);
+      expect(usuario.getNotas()).to.deep.equal([notaUno, notaDos]);
     });
     it('expect(usuario.getNotas()).to.deep.equal([notaUno, notaDos]);', ()=>{
       expect(usuario.getNotas()).to.deep.equal([notaUno, notaDos]);
     });
     it('usuario.modificarNota("Red note", "titulo", "Green note");', ()=>{
       usuario.modificarNota("Red note", "titulo", "Green note");
-      expect(fs.existsSync(`src/aplicacion/usuarios/${usuario.getNombre()}/Green note.json`)).to.be.equal(true);
+      expect(usuario.getNotas()[0].getTitulo()).to.deep.equal("Green note");
     });
     it('usuario.borrarNota("Green note");', ()=>{
       usuario.borrarNota("Green note");
