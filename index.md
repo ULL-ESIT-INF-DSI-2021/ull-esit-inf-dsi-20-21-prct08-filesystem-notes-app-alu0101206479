@@ -110,7 +110,7 @@ Una vez creadas las clases, se pasará a crear la aplicación, su código lo pod
   
   
 En esta lo que se ha hecho es que a través de **yargs** se han añadido los siguientes comandos:
-  * `àdd`: Añade una nota al usuario, se le tiene que pasar como parámetros el usuario (`--user="usuario"`), el título de la nota (`--title="Título"`), el cuerpo de la nota (`--body="Cuerpo"`) y el color de la nota, que se pueden poner 4 colores, **red, blue, green o yellow** (`--color="blue"`)
+  * `add`: Añade una nota al usuario, se le tiene que pasar como parámetros el usuario (`--user="usuario"`), el título de la nota (`--title="Título"`), el cuerpo de la nota (`--body="Cuerpo"`) y el color de la nota, que se pueden poner 4 colores, **red, blue, green o yellow** (`--color="blue"`)
   * `modify`: Modifica un parámetro concreto de una nota, se le tiene que pasar como parámetro obligatoriamente el usuario (`--user="usuario"`) y el título de la nota (`--title="Título"`) y opcionalmente el nuevo valor del campo que se quiere cambiar, el título (`--newTitle="Nuevo Título"`), el cuerpo (`--newBody="Nuevo Cuerpo"`) o el color (`--newColor="red"`)
   * `remove`: Borra una nota concreta al usuario, se le tiene que pasar como parámetros el usuario (`--user="usuario"`) y el título de la nota (`--title="Título"`)
   * `list`: Lista los títulos de las notas de los usuarios, se le tiene que pasar como parámetro el usuario (`--user="usuario"`)
