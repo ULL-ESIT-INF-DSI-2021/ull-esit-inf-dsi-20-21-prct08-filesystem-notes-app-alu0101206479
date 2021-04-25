@@ -2,13 +2,6 @@ import 'mocha';
 import {expect} from 'chai';
 import {Nota} from '../src/aplicacion/nota';
 import {Usuario} from '../src/aplicacion/usuario';
-import * as fs from 'fs';
-
-if (fs.existsSync(`src/aplicacion/usuarios/usuario_prueba`)) {
-  fs.readdirSync(`src/aplicacion/usuarios/usuario_prueba`).forEach((fichero) => {
-    fs.rmSync(`src/aplicacion/usuarios/usuario_prueba/${fichero}`);
-  });
-}
 
 const notaUno = new Nota("Red note", "This is a red note", "red");
 const notaDos = new Nota("Blue note", "This is a blue note", "blue");
